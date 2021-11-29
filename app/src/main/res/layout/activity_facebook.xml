@@ -120,7 +120,7 @@ xmlns:tools="http://schemas.android.com/tools">
     <!--                    app:spanCount="1"-->
     <!--                    tools:listitem="@layout/story_cell" />-->
 
-    <!--                <com.khairo.youtubeandfacebookanimation.facebook.MyStoryLayout-->
+    <!--                <com.khairo.youtubeandfacebookanimation.ui.MyStoryLayout-->
     <!--                    android:id="@+id/my_story"-->
     <!--                    android:layout_width="@dimen/_110sdp"-->
     <!--                    android:layout_height="@dimen/_170sdp"-->

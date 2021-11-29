@@ -30,7 +30,7 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:listitem="@layout/item_list" />
 
-        <com.khairo.youtubeandfacebookanimation.custom.FiltersMotionLayout
+        <com.khairo.youtubeandfacebookanimation.ui.custom.FiltersMotionLayout
             android:id="@+id/filters_motion_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

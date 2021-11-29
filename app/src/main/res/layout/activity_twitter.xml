@@ -6,9 +6,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".twitter.TwitterActivity">
+        tools:context=".ui.twitter.TwitterActivity">
 
-        <com.khairo.youtubeandfacebookanimation.twitter.TwitterFabLayout
+        <com.khairo.youtubeandfacebookanimation.ui.twitter.TwitterFabLayout
             android:id="@+id/motionLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

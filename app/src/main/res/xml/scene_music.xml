@@ -185,10 +185,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_16sdp"
-                app:layout_constraintTop_toBottomOf="@+id/music_sound_controller_second"
                 app:layout_constraintBottom_toBottomOf="@id/music_middle_container_second"
                 app:layout_constraintEnd_toStartOf="@+id/music_slash_second"
-                app:layout_constraintStart_toStartOf="@id/music_middle_container_second" />
+                app:layout_constraintStart_toStartOf="@id/music_middle_container_second"
+                app:layout_constraintTop_toBottomOf="@+id/music_sound_controller_second" />
 
             <CustomAttribute
                 app:attributeName="textColor"
@@ -202,8 +202,8 @@
                 android:layout_marginStart="@dimen/_2sdp"
                 android:layout_marginEnd="@dimen/_2sdp"
                 app:layout_constraintBottom_toBottomOf="@id/music_title_second"
-                app:layout_constraintStart_toEndOf="@+id/music_title_second"
                 app:layout_constraintEnd_toStartOf="@+id/music_desc_second"
+                app:layout_constraintStart_toEndOf="@+id/music_title_second"
                 app:layout_constraintTop_toTopOf="@id/music_title_second" />
 
             <PropertySet android:visibility="visible" />

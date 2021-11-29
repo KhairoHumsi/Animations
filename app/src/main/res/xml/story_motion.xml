@@ -28,8 +28,7 @@
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toStartOf="@id/activity_facebook_recycler"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="parent">
-        </Constraint>
+            motion:layout_constraintTop_toTopOf="parent"></Constraint>
 
         <Constraint
             android:id="@id/my_story_icon"
@@ -82,10 +81,10 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent" />
 
-        <Constraint
-            android:id="@id/my_story_icon">
+        <Constraint android:id="@id/my_story_icon">
 
-            <Layout android:layout_width="@dimen/_40sdp"
+            <Layout
+                android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"

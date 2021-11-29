@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#424242"
-        tools:context=".youtube.MainFragment">
+        tools:context=".ui.youtube.MainFragment">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/test"

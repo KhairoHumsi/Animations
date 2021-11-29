@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="#E1E1E1"
         app:layoutDescription="@xml/video_motion"
-        tools:context=".youtube.YoutubeActivity">
+        tools:context=".ui.youtube.YoutubeActivity">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/main_nav_host"

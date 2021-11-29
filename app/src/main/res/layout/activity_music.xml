@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutDescription="@xml/scene_music"
-        tools:context=".music.MusicActivity">
+        tools:context=".ui.music.MusicActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/music_recyclerview"

@@ -8,10 +8,10 @@
         motion:duration="1000"
         motion:motionInterpolator="easeIn">
 
-<!--        <OnSwipe-->
-<!--            motion:dragDirection="dragUp"-->
-<!--            motion:touchAnchorId="@+id/main_video"-->
-<!--            motion:touchAnchorSide="middle" />-->
+        <!--        <OnSwipe-->
+        <!--            motion:dragDirection="dragUp"-->
+        <!--            motion:touchAnchorId="@+id/main_video"-->
+        <!--            motion:touchAnchorSide="middle" />-->
     </Transition>
 
     <Transition
@@ -63,8 +63,8 @@
     </Transition>
 
     <Transition
-        motion:constraintSetStart="@+id/midShow"
         motion:constraintSetEnd="@+id/base"
+        motion:constraintSetStart="@+id/midShow"
         motion:duration="1000">
 
         <OnSwipe

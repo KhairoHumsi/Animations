@@ -11,11 +11,11 @@
 
         <variable
             name="viewModel"
-            type="com.khairo.youtubeandfacebookanimation.youtube.MainViewModel" />
+            type="com.khairo.youtubeandfacebookanimation.ui.youtube.MainViewModel" />
 
         <variable
             name="viewHolder"
-            type="com.khairo.youtubeandfacebookanimation.youtube.MainAdapter.ViewHolder" />
+            type="com.khairo.youtubeandfacebookanimation.ui.youtube.MainAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

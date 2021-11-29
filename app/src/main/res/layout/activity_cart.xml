@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutDescription="@xml/scene_cart"
-        tools:context=".cart.CartActivity">
+        tools:context=".ui.cart.CartActivity">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cart_container"

@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="@color/brown"
         app:layoutDescription="@xml/scene_marvel_motion"
-        tools:context=".marvel.MarvelActivity">
+        tools:context=".ui.marvel.MarvelActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/toolbar"

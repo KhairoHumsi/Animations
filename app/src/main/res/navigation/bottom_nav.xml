@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.khairo.youtubeandfacebookanimation.youtube.MainFragment"
+        android:name="com.khairo.youtubeandfacebookanimation.ui.youtube.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
 
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.khairo.youtubeandfacebookanimation.youtube.SecondFragment"
+        android:name="com.khairo.youtubeandfacebookanimation.ui.youtube.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" />
 
     <fragment
         android:id="@+id/thairdFragment"
-        android:name="com.khairo.youtubeandfacebookanimation.youtube.ThirdFragment"
+        android:name="com.khairo.youtubeandfacebookanimation.ui.youtube.ThirdFragment"
         android:label="fragment_thaird"
         tools:layout="@layout/fragment_third" />
 </navigation>

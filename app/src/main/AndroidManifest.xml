@@ -11,28 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YoutubeAndFacebookAnimation">
         <activity
-            android:name=".music.MusicActivity"
+            android:name=".ui.music.MusicActivity"
             android:exported="false" />
         <activity
-            android:name=".cart.CartActivity"
+            android:name=".ui.cart.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".marvel.MarvelActivity"
+            android:name=".ui.marvel.MarvelActivity"
             android:exported="false" />
         <activity
-            android:name=".twitter.TwitterActivity"
+            android:name=".ui.twitter.TwitterActivity"
             android:exported="false" />
         <activity
-            android:name=".custom.CustomActivity"
+            android:name=".ui.custom.CustomActivity"
             android:exported="false" />
         <activity
-            android:name=".facebook.FacebookActivity"
+            android:name=".ui.facebook.FacebookActivity"
             android:exported="false" />
         <activity
-            android:name=".youtube.YoutubeActivity"
+            android:name=".ui.youtube.YoutubeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
