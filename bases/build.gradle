@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding true
+    }
+}
+
+dependencies {
+    def paging_version = "3.1.0-alpha04"
+    def appcompat_version = "1.3.1"
+    def lifecycle_extensions_version = "2.2.0"
+    def localization_version = "1.2.9"
+
+    //appcompat
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+
+    //lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions_version"
+
+    //paging
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    //LocalizationActivity
+    implementation "com.akexorcist:localization:$localization_version"
+}

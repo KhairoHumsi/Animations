@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////// Constraint Sets /////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- /////////////////////////////////
+    // 1) Base Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet android:id="@+id/cart_base">
+
+        <Constraint android:id="@+id/cart_container">
+            <Layout
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_90sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@+id/cart_image_container">
+            <PropertySet
+                android:alpha="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/cart_icon">
+            <Layout
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/cart_container"
+                app:layout_constraintStart_toStartOf="@+id/cart_container"
+                app:layout_constraintTop_toTopOf="@+id/cart_container"
+                app:layout_constraintVertical_bias="0.29" />
+        </Constraint>
+
+        <Constraint android:id="@+id/cart_number">
+            <Layout
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/cerulean_blue"
+                app:layout_constraintBottom_toTopOf="@id/cart_icon"
+                app:layout_constraintEnd_toEndOf="@id/cart_icon"
+                app:layout_constraintStart_toStartOf="@id/cart_icon" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 2) Add one Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/cart_add"
+        app:deriveConstraintsFrom="@id/cart_base">
+
+        <Constraint android:id="@+id/cart_container">
+            <Layout
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_90sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@+id/cart_image_container">
+            <Layout
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/cart_icon"
+                app:layout_constraintStart_toEndOf="@+id/cart_icon"
+                app:layout_constraintTop_toTopOf="@+id/cart_number" />
+
+            <PropertySet
+                android:alpha="1"
+                android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 3) Add two Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/cart_add_two"
+        app:deriveConstraintsFrom="@id/cart_add">
+
+        <Constraint android:id="@+id/cart_container">
+            <Layout
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 4) Add three Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/cart_add_three"
+        app:deriveConstraintsFrom="@id/cart_add_two">
+
+        <Constraint android:id="@+id/cart_container">
+            <Layout
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_90sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 5) Back to Base Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet android:id="@+id/cart_base_back">
+        <Constraint android:id="@+id/cart_container">
+            <Layout
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_90sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+        </Constraint>
+
+        <Constraint android:id="@+id/cart_image_container">
+            <Layout
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/cart_icon"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cart_number" />
+
+            <PropertySet
+                android:alpha="1"
+                android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////// Transitions /////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- /////////////////////////////////
+    // 1 -> 2: Path Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/cart_add"
+        app:constraintSetStart="@id/cart_base"
+        app:duration="500">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="1.25"
+                android:scaleY="1.25"
+                app:framePosition="1"
+                app:motionTarget="@id/cart_image_container">
+
+                <CustomAttribute
+                    app:attributeName="radius"
+                    app:customDimension="@dimen/_8sdp" />
+            </KeyAttribute>
+
+            <KeyPosition
+                app:framePosition="1"
+                app:keyPositionType="deltaRelative"
+                app:motionTarget="@id/cart_image_container"
+                app:percentY="-0.05" />
+
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- /////////////////////////////////
+    // 2 -> 3: Path Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/cart_add_two"
+        app:constraintSetStart="@id/cart_add"
+        app:duration="75" />
+
+    <!-- /////////////////////////////////
+    // 3 -> 4: Path Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/cart_add_three"
+        app:constraintSetStart="@id/cart_add_two"
+        app:duration="75" />
+
+    <!-- /////////////////////////////////
+    // 4 -> 5: Path Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/cart_base_back"
+        app:constraintSetStart="@id/cart_add_three"
+        app:duration="1000">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:framePosition="100"
+                app:motionTarget="@id/cart_image_container" />
+        </KeyFrameSet>
+
+    </Transition>
+</MotionScene>

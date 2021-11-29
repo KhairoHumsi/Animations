@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////// Constraint Sets /////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- /////////////////////////////////
+    // 1) Base Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet android:id="@+id/music_base">
+        <Constraint android:id="@id/music_container">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_image_first">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_middle_container_first">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_title_first">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_desc_first">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_bottom_container_second">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="@id/music_container"
+                app:layout_constraintStart_toStartOf="@id/music_container"
+                app:layout_constraintTop_toBottomOf="@+id/music_container" />
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 2) Add one Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/music_first"
+        app:deriveConstraintsFrom="@id/music_base">
+
+        <Constraint android:id="@id/music_container">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_image_first">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_middle_container_first">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_title_first">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_desc_first">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_image_second">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_middle_container_second">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_play_container_second">
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="@dimen/_24sdp" />
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_play_second">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_title_second">
+
+            <CustomAttribute
+                app:attributeName="textColor"
+                app:customColorValue="@color/black" />
+
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_desc_second">
+
+            <CustomAttribute
+                app:attributeName="textColor"
+                app:customColorValue="@color/grey" />
+
+            <CustomAttribute
+                app:attributeName="lines"
+                app:customIntegerValue="1" />
+
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_bottom_container_second">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintBottom_toBottomOf="@id/music_container"
+                app:layout_constraintEnd_toEndOf="@id/music_container"
+                app:layout_constraintStart_toStartOf="@id/music_container"
+                app:layout_constraintTop_toBottomOf="@+id/music_middle_container_second" />
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 3) Add one Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/music_second"
+        app:deriveConstraintsFrom="@id/music_first">
+
+        <Constraint android:id="@id/music_play_container_second">
+            <Layout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/_50sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/music_container"
+                app:layout_constraintEnd_toEndOf="@id/music_middle_container_second"
+                app:layout_constraintStart_toStartOf="@+id/music_middle_container_second"
+                app:layout_constraintTop_toBottomOf="@+id/music_image_second" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_play_second">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_sound_controller_second">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_middle_container_second">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/music_container"
+                app:layout_constraintEnd_toEndOf="@id/music_container"
+                app:layout_constraintStart_toStartOf="@id/music_container"
+                app:layout_constraintTop_toBottomOf="@+id/music_image_second" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_bottom_container_second">
+            <Layout
+                app:layout_constraintEnd_toEndOf="@id/music_container"
+                app:layout_constraintStart_toStartOf="@id/music_container"
+                app:layout_constraintTop_toBottomOf="@+id/music_container" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_title_second">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                app:layout_constraintTop_toBottomOf="@+id/music_sound_controller_second"
+                app:layout_constraintBottom_toBottomOf="@id/music_middle_container_second"
+                app:layout_constraintEnd_toStartOf="@+id/music_slash_second"
+                app:layout_constraintStart_toStartOf="@id/music_middle_container_second" />
+
+            <CustomAttribute
+                app:attributeName="textColor"
+                app:customColorValue="@color/white" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_slash_second">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="@id/music_title_second"
+                app:layout_constraintStart_toEndOf="@+id/music_title_second"
+                app:layout_constraintEnd_toStartOf="@+id/music_desc_second"
+                app:layout_constraintTop_toTopOf="@id/music_title_second" />
+
+            <PropertySet android:visibility="visible" />
+
+            <CustomAttribute
+                app:attributeName="textColor"
+                app:customColorValue="@color/white" />
+        </Constraint>
+
+        <Constraint android:id="@id/music_desc_second">
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_16sdp"
+                app:layout_constraintBottom_toBottomOf="@id/music_title_second"
+                app:layout_constraintEnd_toEndOf="@+id/music_middle_container_second"
+                app:layout_constraintStart_toEndOf="@+id/music_slash_second"
+                app:layout_constraintTop_toTopOf="@id/music_title_second" />
+
+            <CustomAttribute
+                app:attributeName="textColor"
+                app:customColorValue="@color/white" />
+
+            <CustomAttribute
+                app:attributeName="lines"
+                app:customIntegerValue="1" />
+        </Constraint>
+    </ConstraintSet>
+
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////// Transitions /////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- /////////////////////////////////
+    // 1 -> 2: Path Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/music_first"
+        app:constraintSetStart="@id/music_base"
+        app:duration="1000">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="50"
+                app:motionTarget="@id/music_image_first" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="50"
+                app:motionTarget="@id/music_middle_container_first" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="50"
+                app:motionTarget="@id/music_title_first" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="50"
+                app:motionTarget="@id/music_desc_first" />
+
+            <KeyAttribute
+                app:framePosition="40"
+                app:motionTarget="@id/music_image_second" />
+
+            <KeyAttribute
+                app:framePosition="40"
+                app:motionTarget="@id/music_middle_container_second" />
+
+            <KeyAttribute
+                app:framePosition="40"
+                app:motionTarget="@id/music_play_container_second" />
+
+            <KeyAttribute
+                app:framePosition="40"
+                app:motionTarget="@id/music_play_second" />
+
+            <KeyAttribute
+                app:framePosition="40"
+                app:motionTarget="@id/music_title_second" />
+
+            <KeyAttribute
+                app:framePosition="40"
+                app:motionTarget="@id/music_desc_second" />
+
+            <KeyAttribute
+                app:framePosition="40"
+                app:motionTarget="@id/music_bottom_container_second" />
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- /////////////////////////////////
+    // 2 -> 3: Path Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/music_second"
+        app:constraintSetStart="@id/music_first"
+        app:duration="1000" />
+
+</MotionScene>

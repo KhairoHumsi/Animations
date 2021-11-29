@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.khairo.youtubeandfacebookanimation.utils.MultiListenerMotionLayout
+        android:id="@+id/cart_motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/scene_cart"
+        tools:context=".cart.CartActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cart_container"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_90sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            android:elevation="@dimen/_1sdp"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cart_image_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            android:visibility="invisible"
+            android:elevation="@dimen/_3sdp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintDimensionRatio="10:6">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cart_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cart_icon"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:elevation="@dimen/_2sdp"
+            android:scaleType="centerCrop"
+            android:tint="@color/cerulean_blue"
+            android:src="@drawable/ic_cart"
+            app:layout_constraintBottom_toBottomOf="@+id/cart_container"
+            app:layout_constraintStart_toStartOf="@+id/cart_container"
+            app:layout_constraintTop_toTopOf="@+id/cart_container"
+            app:layout_constraintVertical_bias="0.29" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cart_number"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_2sdp"
+            tools:text="25"
+            android:text="@string/_0"
+            android:textAlignment="center"
+            android:textColor="@color/cerulean_blue"
+            app:layout_constraintBottom_toTopOf="@id/cart_icon"
+            app:layout_constraintStart_toStartOf="@id/cart_icon"
+            app:layout_constraintEnd_toEndOf="@id/cart_icon"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/items_recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:padding="4dp"
+            android:splitMotionEvents="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:spanCount="2"
+            tools:itemCount="10"
+            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/cart_cell" />
+    </com.khairo.youtubeandfacebookanimation.utils.MultiListenerMotionLayout>
+</layout>

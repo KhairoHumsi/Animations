@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////// Constraint Sets /////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- /////////////////////////////////
+    // 1) Base Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet android:id="@+id/twitter_start">
+
+        <Constraint android:id="@id/twitter_fab_icon">
+            <Transform android:rotation="0" />
+        </Constraint>
+
+        <Constraint android:id="@id/twitter_fab_icon2">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/fab_text">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/gallery">
+            <PropertySet
+                android:scaleX="0"
+                android:scaleY="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/gallery_icon">
+            <PropertySet
+                android:alpha="1"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/gallery_text">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+
+        <Constraint android:id="@id/camera">
+            <PropertySet
+                android:scaleX="0"
+                android:scaleY="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/camera_icon">
+            <PropertySet
+                android:alpha="1"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/camera_text">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+
+        <Constraint android:id="@id/file">
+            <PropertySet
+                android:scaleX="0"
+                android:scaleY="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/file_icon">
+            <PropertySet
+                android:alpha="1"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/file_text">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+    <!-- /////////////////////////////////
+    // 2) Path Set
+    ///////////////////////////////// -->
+
+    <ConstraintSet
+        android:id="@+id/twitter_end"
+        app:deriveConstraintsFrom="@id/twitter_start">
+
+        <Constraint android:id="@id/twitter_fab_icon">
+            <Transform android:rotation="270" />
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@id/twitter_fab_icon2">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/fab_text">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/gallery">
+            <PropertySet
+                android:scaleX="1"
+                android:scaleY="1"
+                android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/gallery_icon">
+            <PropertySet
+                android:scaleX="1"
+                android:scaleY="1"
+                android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/gallery_text">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+
+        <Constraint android:id="@id/camera">
+            <PropertySet
+                android:scaleX="1"
+                android:scaleY="1"
+                android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/camera_icon">
+            <PropertySet
+                android:scaleX="1"
+                android:scaleY="1"
+                android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/camera_text">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+
+        <Constraint android:id="@id/file">
+            <PropertySet
+                android:scaleX="1"
+                android:scaleY="1"
+                android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/file_icon">
+            <PropertySet
+                android:scaleX="1"
+                android:scaleY="1"
+                android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@id/file_text">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+    </ConstraintSet>
+
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////// Transitions /////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+    <!-- ////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- /////////////////////////////////
+    // 1 -> 2: Path Transition
+    ///////////////////////////////// -->
+
+    <Transition
+        app:constraintSetEnd="@id/twitter_end"
+        app:constraintSetStart="@id/twitter_start"
+        app:duration="@integer/pathAnimDuration">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                app:framePosition="50"
+                app:motionTarget="@id/twitter_fab_icon2" />
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="1"
+                app:motionTarget="@id/gallery" />
+            <KeyAttribute
+                android:alpha="1"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="95"
+                app:motionTarget="@id/gallery_icon" />
+
+
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="1"
+                app:motionTarget="@id/camera" />
+            <KeyAttribute
+                android:alpha="1"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="95"
+                app:motionTarget="@id/camera_icon" />
+
+
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="1"
+                app:motionTarget="@id/file" />
+            <KeyAttribute
+                android:alpha="1"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="95"
+                app:motionTarget="@id/file_icon" />
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>

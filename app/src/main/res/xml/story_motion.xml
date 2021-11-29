@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="3000"
+        motion:motionInterpolator="linear">
+
+        <OnSwipe
+            motion:dragDirection="dragLeft"
+            motion:touchAnchorId="@+id/activity_facebook_recycler" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@id/start">
+
+        <Constraint
+            android:id="@id/my_story_container"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="#393939"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/activity_facebook_recycler"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+        </Constraint>
+
+        <Constraint
+            android:id="@id/my_story_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="H,1:1"
+            motion:layout_constraintEnd_toEndOf="@id/my_story_container"
+            motion:layout_constraintStart_toStartOf="@id/my_story_container"
+            motion:layout_constraintTop_toTopOf="@id/my_story_container" />
+
+        <Constraint
+            android:id="@id/my_story_add"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="#393939"
+            motion:layout_constraintBottom_toBottomOf="@+id/my_story_icon"
+            motion:layout_constraintEnd_toEndOf="@id/my_story_container"
+            motion:layout_constraintStart_toStartOf="@id/my_story_container"
+            motion:layout_constraintTop_toBottomOf="@+id/my_story_icon" />
+
+        <Constraint
+            android:id="@id/my_story_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="@id/my_story_container"
+            motion:layout_constraintEnd_toEndOf="@id/my_story_container"
+            motion:layout_constraintStart_toStartOf="@id/my_story_container"
+            motion:layout_constraintTop_toBottomOf="@id/my_story_add" />
+
+        <Constraint
+            android:id="@id/activity_facebook_recycler"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_186sdp"
+            motion:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@id/my_story_container"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@id/end">
+
+        <Constraint
+            android:id="@id/my_story_container"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/circle_background"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/my_story_icon">
+
+            <Layout android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                motion:layout_constraintBottom_toBottomOf="@id/my_story_container"
+                motion:layout_constraintEnd_toEndOf="@id/my_story_container"
+                motion:layout_constraintTop_toTopOf="@id/my_story_container" />
+
+            <CustomAttribute
+                motion:attributeName="radius"
+                motion:customDimension="@dimen/fab_radius" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/my_story_add"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            motion:layout_constraintBottom_toBottomOf="@+id/my_story_icon"
+            motion:layout_constraintEnd_toEndOf="@+id/my_story_icon" />
+
+        <Constraint android:id="@id/my_story_title">
+            <PropertySet android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/activity_facebook_recycler"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_186sdp"
+            motion:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>

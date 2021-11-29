@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".youtube.FacebookActivity">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutDescription="@xml/story_motion"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activity_facebook_recycler"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_186sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/my_story_container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:spanCount="1"
+            tools:listitem="@layout/story_cell" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/my_story_container"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="#393939"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/activity_facebook_recycler"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/my_story_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/cat_3"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toEndOf="@id/my_story_container"
+            app:layout_constraintStart_toStartOf="@id/my_story_container"
+            app:layout_constraintTop_toTopOf="@id/my_story_container"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/my_story_add"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="#393939"
+            app:srcCompat="@drawable/cat_2"
+            android:padding="@dimen/_2sdp"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintTop_toBottomOf="@+id/my_story_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/my_story_icon"
+            app:layout_constraintStart_toStartOf="@id/my_story_container"
+            app:layout_constraintEnd_toEndOf="@id/my_story_container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/my_story_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/create_story"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/my_story_add"
+            app:layout_constraintBottom_toBottomOf="@id/my_story_container"
+            app:layout_constraintStart_toStartOf="@id/my_story_container"
+            app:layout_constraintEnd_toEndOf="@id/my_story_container" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools">-->
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        tools:context=".youtube.FacebookActivity">-->
+
+    <!--        <androidx.constraintlayout.motion.widget.MotionLayout-->
+    <!--            android:id="@+id/motionLayout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layoutDescription="@xml/story_motion"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent">-->
+    <!--            -->
+    <!--                <androidx.recyclerview.widget.RecyclerView-->
+    <!--                    android:id="@+id/activity_facebook_recycler"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="@dimen/_186sdp"-->
+    <!--                    android:orientation="horizontal"-->
+    <!--                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintStart_toEndOf="@id/my_story"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:spanCount="1"-->
+    <!--                    tools:listitem="@layout/story_cell" />-->
+
+    <!--                <com.khairo.youtubeandfacebookanimation.facebook.MyStoryLayout-->
+    <!--                    android:id="@+id/my_story"-->
+    <!--                    android:layout_width="@dimen/_110sdp"-->
+    <!--                    android:layout_height="@dimen/_170sdp"-->
+    <!--                    android:layout_marginStart="@dimen/_8sdp"-->
+    <!--                    android:layout_marginTop="@dimen/_8sdp"-->
+    <!--                    android:layout_marginEnd="@dimen/_4sdp"-->
+    <!--                    android:layout_marginBottom="@dimen/_8sdp"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:layout_constraintEnd_toStartOf="@id/activity_facebook_recycler"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+    <!--        </androidx.constraintlayout.motion.widget.MotionLayout>-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</layout>-->
+

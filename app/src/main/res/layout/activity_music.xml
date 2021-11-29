@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.khairo.youtubeandfacebookanimation.utils.MultiListenerMotionLayout
+        android:id="@+id/music_motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/scene_music"
+        tools:context=".music.MusicActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/music_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:padding="4dp"
+            android:splitMotionEvents="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:spanCount="2"
+            tools:itemCount="10"
+            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/music_cell" />
+
+        <View
+            android:id="@+id/music_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#fff"
+            android:elevation="@dimen/_1sdp"
+            android:visibility="invisible"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/music_image_first"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="@dimen/_1sdp"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/music_container"
+            app:layout_constraintStart_toStartOf="@id/music_container"
+            app:layout_constraintTop_toTopOf="@id/music_container"
+            tools:src="@tools:sample/avatars[2]" />
+
+        <View
+            android:id="@+id/music_middle_container_first"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingBottom="@dimen/_24sdp"
+            app:layout_constraintBottom_toBottomOf="@id/music_container"
+            app:layout_constraintEnd_toEndOf="@id/music_container"
+            app:layout_constraintStart_toStartOf="@id/music_container"
+            app:layout_constraintTop_toBottomOf="@+id/music_image_first" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/music_title_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:elevation="@dimen/_1sdp"
+            android:lines="1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintBottom_toTopOf="@+id/music_desc_first"
+            app:layout_constraintEnd_toEndOf="@id/music_middle_container_first"
+            app:layout_constraintStart_toStartOf="@id/music_middle_container_first"
+            app:layout_constraintTop_toTopOf="@id/music_middle_container_first"
+            tools:text="@tools:sample/full_names" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/music_desc_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_1sdp"
+            android:lines="2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="@id/music_title_first"
+            app:layout_constraintStart_toStartOf="@id/music_title_first"
+            app:layout_constraintTop_toBottomOf="@id/music_title_first"
+            tools:text="@tools:sample/full_names" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/music_image_second"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="@dimen/_1sdp"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"
+            app:layout_constraintDimensionRatio="1:1.2"
+            app:layout_constraintEnd_toEndOf="@id/music_container"
+            app:layout_constraintStart_toStartOf="@id/music_container"
+            app:layout_constraintTop_toTopOf="@id/music_container"
+            tools:src="@tools:sample/avatars[2]" />
+
+        <View
+            android:id="@+id/music_middle_container_second"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/purple_340"
+            android:elevation="@dimen/_1sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/music_bottom_container_second"
+            app:layout_constraintEnd_toEndOf="@id/music_container"
+            app:layout_constraintStart_toStartOf="@id/music_container"
+            app:layout_constraintTop_toBottomOf="@id/music_image_second" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/music_play_container_second"
+            android:layout_width="@dimen/_46sdp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@color/darkGrey"
+            android:padding="0dp"
+            android:visibility="invisible"
+            app:cardCornerRadius="@dimen/_24sdp"
+            app:layout_constraintBottom_toTopOf="@id/music_middle_container_second"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/music_middle_container_second"
+            app:layout_constraintTop_toTopOf="@id/music_middle_container_second" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/music_play_second"
+            android:layout_width="@dimen/_46sdp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_circle"
+            android:elevation="@dimen/_5sdp"
+            android:src="@drawable/ic_circle_play"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/music_play_container_second"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/music_play_container_second"
+            app:layout_constraintStart_toStartOf="@+id/music_play_container_second"
+            app:layout_constraintTop_toTopOf="@+id/music_play_container_second" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/music_sound_controller_second"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/darkGrey"
+            android:elevation="@dimen/_2sdp"
+            android:paddingTop="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_16sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/music_play_container_second"
+            app:layout_constraintEnd_toEndOf="@id/music_play_container_second"
+            app:layout_constraintStart_toStartOf="@id/music_play_container_second"
+            app:layout_constraintTop_toTopOf="@id/music_play_container_second">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/slow"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_slow_rewind"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/pause"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pause"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_pause"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/fast"
+                app:layout_constraintStart_toEndOf="@id/slow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fast"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_fast_forward"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/pause"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/lower_sound"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:src="@drawable/ic_volume_mute"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@id/slow"
+                app:layout_constraintStart_toStartOf="@id/slow"
+                app:layout_constraintTop_toBottomOf="@id/slow" />
+
+            <SeekBar
+                android:id="@+id/seekbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:progress="25"
+                app:layout_constraintBottom_toBottomOf="@id/lower_sound"
+                app:layout_constraintEnd_toStartOf="@id/higher_sound"
+                app:layout_constraintStart_toEndOf="@id/lower_sound"
+                app:layout_constraintTop_toTopOf="@id/higher_sound" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/higher_sound"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:src="@drawable/ic_volume_up"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@id/fast"
+                app:layout_constraintStart_toStartOf="@id/fast"
+                app:layout_constraintTop_toBottomOf="@id/fast" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/music_title_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:elevation="@dimen/_1sdp"
+            android:lines="1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/music_middle_separator_second"
+            app:layout_constraintEnd_toEndOf="@id/music_container"
+            app:layout_constraintStart_toStartOf="@id/music_container"
+            tools:text="@tools:sample/full_names" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/music_slash_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_1sdp"
+            android:lines="1"
+            android:text="@string/slash"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            android:visibility="invisible" />
+
+        <View
+            android:id="@+id/music_middle_separator_second"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:elevation="@dimen/_1sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/music_middle_container_second"
+            app:layout_constraintEnd_toEndOf="@id/music_middle_container_second"
+            app:layout_constraintStart_toStartOf="@id/music_middle_container_second"
+            app:layout_constraintTop_toTopOf="@id/music_middle_container_second" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/music_desc_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_1sdp"
+            android:lines="2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/music_title_second"
+            app:layout_constraintStart_toStartOf="@id/music_title_second"
+            app:layout_constraintTop_toBottomOf="@+id/music_middle_separator_second"
+            tools:text="@tools:sample/full_names" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/music_bottom_container_second"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/brown"
+            android:elevation="@dimen/_1sdp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/music_container"
+            app:layout_constraintStart_toStartOf="@id/music_container"
+            app:layout_constraintTop_toBottomOf="@+id/music_container">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.khairo.youtubeandfacebookanimation.utils.MultiListenerMotionLayout>
+</layout>

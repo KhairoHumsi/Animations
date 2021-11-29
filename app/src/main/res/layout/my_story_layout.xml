@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:currentState="@id/set1_base"
+    app:layoutDescription="@xml/scene_filter"
+    app:motionDebug="SHOW_ALL"
+    app:showPaths="true"
+    tools:parentTag="androidx.constraintlayout.motion.widget.MotionLayout">
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/my_story_container"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_170sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:background="#393939"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/my_story_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cat_3"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="@id/my_story_container"
+        app:layout_constraintStart_toStartOf="@id/my_story_container"
+        app:layout_constraintTop_toTopOf="@id/my_story_container"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/my_story_add"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/circle"
+        android:padding="@dimen/_2sdp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/my_story_icon"
+        app:layout_constraintEnd_toEndOf="@id/my_story_container"
+        app:layout_constraintStart_toStartOf="@id/my_story_container"
+        app:layout_constraintTop_toBottomOf="@+id/my_story_icon"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/cat_2"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/my_story_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/create_story"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/my_story_container"
+        app:layout_constraintEnd_toEndOf="@id/my_story_container"
+        app:layout_constraintStart_toStartOf="@id/my_story_container"
+        app:layout_constraintTop_toBottomOf="@id/my_story_add" />
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+    </merge>
