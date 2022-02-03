@@ -8,6 +8,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.recyclerview.widget.RecyclerView
 import com.khairo.youtubeandfacebookanimation.databinding.MusicCellBinding
+import com.khairo.youtubeandfacebookanimation.utils.load
 
 class MusicAdapter(
     private val context: Context,
