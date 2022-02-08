@@ -48,6 +48,10 @@ class MusicActivity : BaseActivity<ActivityMusicBinding>(), MusicAdapter.OnItemC
 
             }
         }
+
+        binding.pause.setOnClickListener {
+            binding.pause.setImageResource(R.drawable.ic_play_white)
+        }
     }
 
     private fun init() {
@@ -165,6 +169,7 @@ class MusicActivity : BaseActivity<ActivityMusicBinding>(), MusicAdapter.OnItemC
                     binding.musicMotionLayout.progress = 1f
                     binding.musicMotionLayout.transitionToStart()
                     binding.musicMotionLayout.awaitTransitionComplete(R.id.music_base)
+                    binding.pause.setImageResource(R.drawable.ic_pause)
                 }
             }
             R.id.music_second -> {
@@ -174,6 +179,7 @@ class MusicActivity : BaseActivity<ActivityMusicBinding>(), MusicAdapter.OnItemC
                     binding.musicMotionLayout.progress = 1f
                     binding.musicMotionLayout.transitionToStart()
                     binding.musicMotionLayout.awaitTransitionComplete(R.id.music_second)
+
                 }
             }
             else -> super.onBackPressed()
