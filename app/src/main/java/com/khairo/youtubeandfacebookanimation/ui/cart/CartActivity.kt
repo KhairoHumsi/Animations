@@ -46,6 +46,16 @@ class CartActivity : BaseActivity<ActivityCartBinding>(), ItemsAdapter.OnItemCli
 
         setupAdapter()
         binding.itemsRecycler.addOnItemTouchListener(itemTouchInterceptor)
+
+        binding.cartIcon.setOnClickListener {
+            binding.cartMotionLayout.setTransition(R.id.base_cart, R.id.opened_cart)
+            binding.cartMotionLayout.transitionToState(R.id.opened_cart)
+            ListFragment.newInstance().also {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.cart_container, it)
+                    .commitNow()
+            }
+        }
     }
 
     private fun setupAdapter() {
@@ -157,9 +167,18 @@ class CartActivity : BaseActivity<ActivityCartBinding>(), ItemsAdapter.OnItemCli
         }
     }
 
-//    override fun onBackPressed() {
-//        if (binding.cartMotionLayout.currentState != binding.cartMotionLayout.startState) {
-//            binding.cartMotionLayout.transitionToStart()
-//        } else super.onBackPressed()
-//    }
+    override fun onBackPressed() {
+        binding.cartMotionLayout.apply {
+            when (currentState) {
+                R.id.opened_cart -> {
+                    transitionToStart()
+                    binding.cartContainer.removeAllViewsInLayout()
+                    supportFragmentManager.beginTransaction()
+                        .addToBackStack(null)
+                        .commit()
+                }
+                else -> super.onBackPressed()
+            }
+        }
+    }
 }

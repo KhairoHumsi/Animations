@@ -23,6 +23,7 @@
         <entry key="app/src/main/res/layout/activity_marvel.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_music.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_twitter.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_weird_cart.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_youtube.xml" value="0.125" />
         <entry key="app/src/main/res/layout/cart_cell.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/content_scrolling.xml" value="0.2269021739130435" />
@@ -31,9 +32,11 @@
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.20380434782608695" />
         <entry key="app/src/main/res/layout/header.xml" value="0.2269021739130435" />
         <entry key="app/src/main/res/layout/item_image.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_layout.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/item_list.xml" value="0.165" />
         <entry key="app/src/main/res/layout/layout_filter_motion.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_twitter_fab.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/motion_22_list_fragment.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/music_cell.xml" value="0.1" />
         <entry key="app/src/main/res/layout/my_story_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/story_cell.xml" value="0.12962962962962962" />

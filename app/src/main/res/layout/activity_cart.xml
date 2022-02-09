@@ -16,12 +16,13 @@
         app:layoutDescription="@xml/scene_cart"
         tools:context=".ui.cart.CartActivity">
 
-        <androidx.cardview.widget.CardView
+        <com.khairo.youtubeandfacebookanimation.ui.cart.TouchCardView
             android:id="@+id/cart_container"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_90sdp"
             android:elevation="@dimen/_1sdp"
             app:cardCornerRadius="@dimen/_8sdp"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="parent"
