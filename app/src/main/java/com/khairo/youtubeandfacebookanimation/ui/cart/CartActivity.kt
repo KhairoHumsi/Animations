@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.khairo.bases.data.BaseActivity
 import com.khairo.youtubeandfacebookanimation.BR
@@ -15,6 +16,8 @@ import com.khairo.youtubeandfacebookanimation.R
 import com.khairo.youtubeandfacebookanimation.databinding.ActivityCartBinding
 import com.khairo.youtubeandfacebookanimation.utils.ItemTouchInterceptor
 import com.khairo.youtubeandfacebookanimation.utils.transitionListener
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class CartActivity : BaseActivity<ActivityCartBinding>(), ItemsAdapter.OnItemClickListener {
 
@@ -171,11 +174,13 @@ class CartActivity : BaseActivity<ActivityCartBinding>(), ItemsAdapter.OnItemCli
         binding.cartMotionLayout.apply {
             when (currentState) {
                 R.id.opened_cart -> {
-                    transitionToStart()
-                    binding.cartContainer.removeAllViewsInLayout()
-                    supportFragmentManager.beginTransaction()
-                        .addToBackStack(null)
-                        .commit()
+
+                    lifecycleScope.launch {
+                        transitionToStart()
+                        delay(500)
+
+                        binding.cartContainer.removeAllViewsInLayout()
+                    }
                 }
                 else -> super.onBackPressed()
             }

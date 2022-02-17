@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cart_number"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_2sdp"
+            android:textAlignment="center"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:textColor="@color/cerulean_blue"
+            app:layout_constraintBottom_toTopOf="@id/cart_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="25" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cart_icon"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:elevation="@dimen/_2sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_cart"
+            android:tint="@color/cerulean_blue"
+            app:layout_constraintTop_toBottomOf="@id/cart_number"
+            app:layout_constraintEnd_toEndOf="@id/cart_number"
+            app:layout_constraintStart_toStartOf="@id/cart_number" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
