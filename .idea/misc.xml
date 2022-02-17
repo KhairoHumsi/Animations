@@ -45,8 +45,10 @@
         <entry key="app/src/main/res/layout/youtube_video-layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/youtube_video_layout.xml" value="0.18703703703703703" />
         <entry key="app/src/main/res/menu/bottom_nav.xml" value="0.30512820512820515" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.119" />
         <entry key="app/src/main/res/xml/scene_filter.xml" value="0.165" />
         <entry key="bases/src/main/res/layout/activity_main.xml" value="0.20380434782608695" />
+        <entry key="bases/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.119" />
       </map>
     </option>
   </component>
