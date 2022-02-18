@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Generate Release APK
+      - name: Generate Release AAB
         run: ./gradlew assembleRelease
-      - name: Sign APK
+        
+      - name: Sign AAB
         uses: r0adkll/sign-android-release@v1
-        # ID used to access action output
         id: sign_app
         with:
           releaseDirectory: app/release
@@ -25,8 +25,8 @@ jobs:
           keyPassword: ${{ secrets.KEY_PASSWORD }}
       - uses: actions/upload-artifact@main
         with:
-          name: release.aab
-          path: app/release/app-release.aab
+          name: app-release.aab
+          path: ${{steps.sign_app.outputs.signedReleaseFile}}
       - uses: actions/upload-artifact@main
         with:
           name: mapping.txt
@@ -39,7 +39,7 @@ jobs:
       # 1
       - uses: actions/download-artifact@main
         with:
-          name: release.aab
+          name: app-release.aab
       - uses: actions/download-artifact@main
         with:
           name: mapping.txt
