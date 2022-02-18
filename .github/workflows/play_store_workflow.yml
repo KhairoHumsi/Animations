@@ -18,7 +18,7 @@ jobs:
         # ID used to access action output
         id: sign_app
         with:
-          releaseDirectory: app/build/outputs/bundle/release
+          releaseDirectory: app/release
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/upload-artifact@main
         with:
           name: release.aab
-          path: app/build/outputs/bundle/release/release.aab
+          path: app/release/app-release.aab
       - uses: actions/upload-artifact@main
         with:
           name: mapping.txt
@@ -50,7 +50,7 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           # 3
           packageName: com.khairo.youtubeandfacebookanimation
-          releaseFiles: app/build/outputs/bundle/release/release.aab
+          releaseFiles: app/release/app-release.aab
           track: alpha
           whatsNewDirectory: distribution/
           userFraction: 0.50
