@@ -57,5 +57,5 @@ jobs:
           token: ${{secrets.FIREBASE_TOKEN}}
           groups: QA
           file: app-release-unsigned-signed.apk
-  
+
   
