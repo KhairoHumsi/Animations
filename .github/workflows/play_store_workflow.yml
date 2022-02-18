@@ -26,7 +26,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: release.aab
-          path: ${{steps.sign_app.outputs.signedReleaseFile}}
+          path: app/build/outputs/bundle/release/release.aab
       - uses: actions/upload-artifact@master
         with:
           name: mapping.txt
@@ -50,7 +50,7 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           # 3
           packageName: com.khairo.youtubeandfacebookanimation
-          releaseFile: app/build/outputs/bundle/release/app-release.aab
+          releaseFile: app/build/outputs/bundle/release/release.aab
           track: alpha
           whatsNewDirectory: distribution/
           userFraction: 0.50
