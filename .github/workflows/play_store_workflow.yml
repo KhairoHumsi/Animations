@@ -16,10 +16,10 @@ jobs:
         with:
           java-version: 11
 
-      - name: Build Release AAB      // 1
+      - name: Build Release AAB
         run: ./gradlew bundleRelease
 
-      - name: Sign AAB               // 2
+      - name: Sign AAB
         uses: r0adkll/sign-android-release@v1
         with:
           releaseDirectory: app/build/outputs/bundle/release/
@@ -35,6 +35,6 @@ jobs:
           # 3
           packageName: com.khairo.youtubeandfacebookanimation
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
-          track: production
-          whatsNewDirectory: distribution/whatsnew
+          track: internal
+
 
