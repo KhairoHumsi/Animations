@@ -35,5 +35,5 @@ jobs:
           # 3
           packageName: com.khairo.youtubeandfacebookanimation
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
-          track: beta
-
+          track: internal
+          whatsNewDirectory: distribution/whatsnew
