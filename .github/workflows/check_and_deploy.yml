@@ -34,7 +34,7 @@ jobs:
 
       - uses: actions/upload-artifact@master
         with:
-          name: release.apk
+          name: release.aab
           path: ${{steps.sign_app.outputs.signedReleaseFile}}
           
       - uses: actions/upload-artifact@master
